@@ -27,7 +27,7 @@ Run next commands:
 `yarn start` - run API on *http://localhost:3000*
 
 ## Build 👾 **[FloppyCatsOnline](https://github.com/Makana-Grey/FloppyCats/tree/master/FloppyCatsOnline)**
-Use [SFML](https://www.sfml-dev.org/) for render game and IPv4resolver for multiplier.  
+Use [SFML](https://www.sfml-dev.org/) for render game and IPv4resolver for use in multiplier mode.  
 In [definition.hpp](https://github.com/Makana-Grey/FloppyCats/blob/master/FloppyCatsOnline/FloppyCatsOnline/definitions.hpp) API point set to *http://localhost:3000*  
 Config set up to watch on *IPv4resolver/Debug* and *IPv4resolver/Release* to use [IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver)  
   
