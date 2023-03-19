@@ -1,0 +1,19 @@
+[
+    {
+        "_id": "57e8b4ca-91e9-46ca-b01d-8dcba551adf4",
+        "name": "(Global Env)",
+        "default": false,
+        "global": true,
+        "sortNum": -2,
+        "created": "2023-03-17T19:07:02.971Z",
+        "modified": "2023-03-17T19:07:02.971Z",
+        "data": [
+            { "name": "host", "value": "http://localhost" },
+            { "name": "port", "value": "3000" },
+            { "name": "connection", "value": "game/connection" },
+            { "name": "players", "value": "game/players" },
+            { "name": "player", "value": "game/player" },
+            { "name": "prod", "value": "" }
+        ]
+    }
+]

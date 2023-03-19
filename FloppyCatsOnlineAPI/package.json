@@ -1,0 +1,36 @@
+{
+    "name": "floppy-cats-online-api",
+    "version": "1.0.0",
+    "description": "This API for game Space Paws a.c. Floppy Cats Online",
+    "author": "Nikitin Maxim",
+    "license": "MIT",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Makana-Grey/Floppy-Cats"
+    },
+    "main": "bootstrap.js",
+    "scripts": {
+        "pre-start": "yarn && node scripts/secrets.js && yarn format",
+        "start": "nodemon bootstrap.js",
+        "format": "prettier --write .",
+        "prepare": "cd .. && husky install FloppyCatsOnlineAPI/.husky"
+    },
+    "dependencies": {
+        "koa": "2.14.1",
+        "koa-body": "6.0.1",
+        "koa-router": "12.0.0",
+        "randomized-string": "1.2.7"
+    },
+    "devDependencies": {
+        "chalk": "5.2.0",
+        "husky": "8.0.3",
+        "nodemon": "2.0.21",
+        "prettier": "2.8.4"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "**/thunder-tests/**"
+        ]
+    }
+}

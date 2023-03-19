@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "ipv4-resolver",
+  "version": "1.0.0",
+  "dependencies": [
+    { "name": "boost-asio", "version>=": "1.81.0", "platform": "windows & x64" }
+  ],
+  "builtin-baseline": "716c3524a54f1f50a25d16a4cdd360f5a7fcc150"
+}
