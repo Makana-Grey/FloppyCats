@@ -12,24 +12,24 @@ Below is the information about dependecies for every subproject. that you can us
 
 > **Note**: Code of game is not cross platform and write for only Windows.
 
-## Build **[IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver)**
+## Build 🌐 **[IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver)**
 
 It's first project that you need to build. It's uses in game as **STATIC** library.  
 Use [Boost.Asio](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html) for define IPv4 by host name.   
 In Visual Studio everything is set up so you just have to run the build.  
 > **Note**: Build library for *Debug* and *Release* states.
 
-## Build **[FloppyCatsOnlineAPI](https://github.com/Makana-Grey/FloppyCats/tree/master/FloppyCatsOnlineAPI)**
+## Build 🎯 **[FloppyCatsOnlineAPI](https://github.com/Makana-Grey/FloppyCats/tree/master/FloppyCatsOnlineAPI)**
 
 Run next commands:  
 `yarn pre-start` - it's install all npm packets and set up secrets (if you have it) for testing via [Thunder Client](https://www.thunderclient.com/) production state of API. All configs of Thunder Client already defined and [must automaticaly integrate to your workspace](https://github.com/rangav/thunder-client-support#git-sync). 
   
 `yarn start` - run API on *http://localhost:3000*
 
-## Build **[FloppyCatsOnline](https://github.com/Makana-Grey/FloppyCats/tree/master/FloppyCatsOnline)**
+## Build 👾 **[FloppyCatsOnline](https://github.com/Makana-Grey/FloppyCats/tree/master/FloppyCatsOnline)**
 Use [SFML](https://www.sfml-dev.org/) for render game and IPv4resolver for multiplier.  
-In definition.hpp API point set to *http://localhost:3000*  
-Config set up to watch on *IPv4resolver/Debug* and *IPv4resolver/Release`*  
+In [definition.hpp](https://github.com/Makana-Grey/FloppyCats/blob/master/FloppyCatsOnline/FloppyCatsOnline/definitions.hpp) API point set to *http://localhost:3000*  
+Config set up to watch on *IPv4resolver/Debug* and *IPv4resolver/Release* to use [IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver)  
   
 For static files like media and other data is set up [Post-Build hooks](https://learn.microsoft.com/en-us/visualstudio/ide/how-to-specify-build-events-csharp?view=vs-2022) that use standart Windows CMD commands to copy this files to output dirs.  
 
