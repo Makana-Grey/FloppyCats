@@ -17,7 +17,7 @@ Below is the information about dependecies for every subproject. that you can us
 ## Build 🌐 **[IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver)**
 
 It's first project that you need to build. It's uses in game as **STATIC** library.  
-Use [Boost.Asio](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html) for define IPv4 by host name.   
+Use 🔷🔹☄️[Boost.Asio](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html)☄️🔹🔷 for define IPv4 by host name.   
 In Visual Studio everything is set up so you just have to run the build.  
 > **Note**: Build library for *Debug* and *Release* states.
 
@@ -29,7 +29,7 @@ Run next commands:
 `yarn start` - run API on *http://localhost:3000*
 
 ## Build 👾 **[FloppyCatsOnline](https://github.com/Makana-Grey/FloppyCats/tree/master/FloppyCatsOnline)**
-Use [SFML](https://www.sfml-dev.org/) for render game and IPv4resolver for use in multiplayer mode.  
+Use 🟢🟩💚[SFML](https://www.sfml-dev.org/)💚🟩🟢 for render game and IPv4resolver for use in multiplayer mode.  
 In [definition.hpp](https://github.com/Makana-Grey/FloppyCats/blob/master/FloppyCatsOnline/FloppyCatsOnline/definitions.hpp) API point set to *http://localhost:3000*  
 Config set up to watch on *IPv4resolver/Debug* and *IPv4resolver/Release* to use [IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver)  
   
