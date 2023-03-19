@@ -1,5 +1,7 @@
-# Space Paws aka "Floppy Cats" 
+# 🐾 Space Paws aka "Floppy Cats" 🐾
 ### This simple game like famous Floppy Bird but about Cats in space and with P2P multiplayer
+
+![image](https://user-images.githubusercontent.com/116926286/226208029-636c4693-8d11-4af6-8e74-b377c1121ebd.png)
 
 To build and run game you need:
 
