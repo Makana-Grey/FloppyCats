@@ -6,8 +6,8 @@
 To build and run game you need:
 
 1. Setup [Visual Studio to your Windows machine](https://visualstudio.microsoft.com/) with [C++ components](https://learn.microsoft.com/ru-ru/cpp/build/vscpp-step-0-installation?view=msvc-170)
-2. Instal [vcpkg](https://vcpkg.io/en/getting-started.html) and integrate it with *MSBuild/Visual Studio*
-3. Instal [NodeJS v18.14.2 for Windows too](https://nodejs.org/download/release/v18.14.2/) and [enable corepack for yarn](https://yarnpkg.com/getting-started/install)
+2. Install [vcpkg](https://vcpkg.io/en/getting-started.html) and integrate it with *MSBuild/Visual Studio*
+3. Install [NodeJS v18.14.2 for Windows too](https://nodejs.org/download/release/v18.14.2/) and [enable corepack for yarn](https://yarnpkg.com/getting-started/install)
 
 This points are not required, it's just define how i develop.  
 Below is the information about dependecies for every subproject. that you can use to build it for you enviroment.
