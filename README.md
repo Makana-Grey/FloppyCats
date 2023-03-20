@@ -29,7 +29,7 @@ Run next commands:
 `yarn start` - run API on *http://localhost:3000*
 
 ## Build **[👾 FloppyCatsOnline](https://github.com/Makana-Grey/FloppyCats/tree/master/FloppyCatsOnline)**
-Use [🟢🟩💚SFML🟢🟩💚](https://www.sfml-dev.org/) for render game and [🔥Jsoncpp](https://github.com/open-source-parsers/jsoncpp), [🕸️IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver) and [🖧SFML Network](https://www.sfml-dev.org/tutorials/2.5/network-socket.php) for multiplayer mode.  
+Use [🟢🟩💚SFML🟢🟩💚](https://www.sfml-dev.org/) for render game and [🔥Jsoncpp](https://github.com/open-source-parsers/jsoncpp), [🕸️IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver) and [🖧SFML Network](https://www.sfml-dev.org/tutorials/2.5/#network-module) for multiplayer mode.  
 In [definition.hpp](https://github.com/Makana-Grey/FloppyCats/blob/master/FloppyCatsOnline/FloppyCatsOnline/definitions.hpp) API point set to *http://localhost:3000*  
 Config set up to watch on *IPv4resolver/Debug* and *IPv4resolver/Release* to use [IPv4resolver](https://github.com/Makana-Grey/FloppyCats/tree/master/IPv4resolver)  
   
