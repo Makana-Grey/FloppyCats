@@ -1,4 +1,4 @@
-#include "features.hpp"
+#include "features_client.hpp"
 
 constexpr uint16_t BINDING_REQUEST = 0x0001;
 constexpr uint16_t BINDING_RESPONSE = 0x0101;
@@ -7,7 +7,7 @@ constexpr uint16_t MAPPED_ADDRES = 0x0001;
 constexpr uint16_t XOR_MAPPED_ADDRES = 0x0020;
 constexpr uint8_t IPV4 = 0x01;
 
-std::array<uint8_t, 12> getStunRequest(sf::Packet& packet) {
+std::array<uint8_t, 12> createStunRequest(sf::Packet& packet) {
 	packet << BINDING_REQUEST;
 	packet << (uint16_t)0x0000;
 	packet << MAGIC_COOKIE;

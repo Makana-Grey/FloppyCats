@@ -59,9 +59,7 @@ int main()
 
 		Game::loadStaticScene(backgroundScene);
 
-#if MODE == DEPLOY
-		Game::loadScene(new Menu());
-#endif
+#ifndef NDEBUG 
 #if MODE == MENU
 		Game::loadScene(new Menu());
 #endif
@@ -74,6 +72,9 @@ int main()
 #if MODE == GAME_SETTINGS
 		Game::loadScene(new GameSettings());
 #endif
+#else
+		Game::loadScene(new Menu());
+#endif 
 
 		Game::run();
 

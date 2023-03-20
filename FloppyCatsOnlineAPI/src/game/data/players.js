@@ -19,12 +19,6 @@ export class Player {
 
     /** @type {Date | undefined} */
     connectionDate = undefined
-
-    /** @type {Number} */
-    width = 0
-
-    /** @type {Number} */
-    height = 0
 }
 
 /** @type {{data: Player[]}} */

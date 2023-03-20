@@ -34,6 +34,7 @@ export function connect(player) {
                 connectionDate: new Date(),
             }
             players.data.push(newPlayer)
+            console.log(newPlayer)
 
             return { name, token }
         }

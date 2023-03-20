@@ -14,8 +14,8 @@ import { Player } from '../data/players.js'
  * @returns {Boolean}
  */
 export function isValidToConnect(player) {
-    const { ip, port, width, height } = player
-    return ip && port && width && height && width > 0 && height > 0
+    const { ip, port } = player
+    return ip && port
 }
 
 /**

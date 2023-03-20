@@ -1,6 +1,7 @@
 #include <string>
 #include <SFML/Network.hpp>
 #include <cstdint>
+#include <vector>
 
 #ifndef _network_hpp
 #define _network_hpp
@@ -8,17 +9,28 @@
 class Network {
 private:
 	UdpSocket socket_;
-	std::string self_ip_ = "";
-	uint16_t self_port_ = 0;
+	std::string ip_ = "";
+	uint16_t port_ = 0;
 
-	void resolveSelfPoint();
+	Http http_;
+
+	std::string name_ = "";
+	std::string token_ = "";
+
+	bool resolvePoint();
 public:
 	Network();
+	bool initialize();
 
-	bool isConnect = false;
-	bool isConnecting = false;
+	bool connect();
+	bool refresh();
 
-	void connect();
+	bool all(std::vector<std::string>& players);
+	bool search(const std::string query, std::string& name);
+	bool point(const std::string name, std::string& ip, uint16_t& port);
+
+	bool setPlay(const bool value);
+	bool setPublic(const bool value);
 };
 
 

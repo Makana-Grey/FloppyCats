@@ -30,7 +30,9 @@
     },
     "nodemonConfig": {
         "ignore": [
-            "**/thunder-tests/**"
+            "**/dist/**",
+            "**/thunder-tests/**",
+            "**/scripts/**"
         ]
     }
 }

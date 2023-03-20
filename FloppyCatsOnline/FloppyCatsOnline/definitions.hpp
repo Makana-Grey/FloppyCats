@@ -2,7 +2,7 @@
 
 
 //Developing
-#define DEPLOY -1
+#define DEPLOY -1 // use it only for release build
 #define MENU 0
 #define SINGLEPLAYER 1
 #define MULTIPLAYER 2
@@ -103,5 +103,14 @@
 
 
 //Network props
-#define API_URL "http://localhost:3000"
+#define API_PROD ""
+#define API_URL "http://localhost"
+#define API_PORT 3000
+#define API_CONNECTION_CONNECT "game/connection/connect"
+#define API_CONNECTION_REFRESH "game/connection/refresh"
+#define API_PLAYERS_ALL "game/players/all"
+#define API_PLAYERS_SEARCH "game/players/search"
+#define API_PLAYERS_POINT "game/players/point"
+#define API_PLAYER_PLAY "game/player/play"
+#define API_PLAYER_PUBLIC "game/player/public"
 #define WAIT_FOR_STUN_RESP_S 3

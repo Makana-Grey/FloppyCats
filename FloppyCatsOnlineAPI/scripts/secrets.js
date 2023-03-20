@@ -1,11 +1,16 @@
 import * as fs from 'fs'
+import * as path from 'path'
+import { fileURLToPath } from 'url'
 import chalk from 'chalk'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const log = console.log
 
 ;(function restorThunderSecrets() {
     /*
-        secrets/thunderEnvironment.json file structure: 
+        ~/secrets/secrets.json file structure: 
         {
             "prod": "..." //Here production api host name
         }
@@ -24,7 +29,7 @@ const log = console.log
 
     log(chalk.yellow(`Start restoring thunder secrets`))
 
-    const source = './secrets/thunderEnvironment.json'
+    const source = path.join(__dirname, '..', '..', 'secrets', 'secrets.json')
     const dest = './thunder-tests/thunderEnvironment.json'
 
     log(chalk.yellow(`Check exists secrets and destination files`))
