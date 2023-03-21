@@ -31,7 +31,6 @@ bool resolveHttpResponse(sf::Http& http, sf::Http::Request& req, const std::stri
 
 	if (response.getStatus() == 200) {
 		resp_body = response.getBody();
-
 		return true;
 	}
 

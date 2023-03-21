@@ -27,4 +27,5 @@ export const animals = [
     'chick',
     'horse',
     'tortle',
+    'lemure',
 ]

@@ -11,7 +11,7 @@ router.put('/play', (ctx, next) => {
         ctx.response.status = 200
     } else {
         ctx.response.status = 400
-        ctx.body = `Can't set playing status`
+        ctx.response.body = `Can't set playing status`
     }
 
     next()
@@ -25,7 +25,7 @@ router.put('/public', (ctx, next) => {
         ctx.response.status = 200
     } else {
         ctx.response.status = 400
-        ctx.body = `Can't set public status`
+        ctx.response.body = `Can't set public status`
     }
 
     next()

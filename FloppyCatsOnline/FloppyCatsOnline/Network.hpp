@@ -14,13 +14,14 @@ private:
 
 	Http http_;
 
-	std::string name_ = "";
 	std::string token_ = "";
 
-	bool resolvePoint();
 public:
+	std::string name = "";
+
 	Network();
 	bool initialize();
+	bool resolvePoint();
 
 	bool connect();
 	bool refresh();

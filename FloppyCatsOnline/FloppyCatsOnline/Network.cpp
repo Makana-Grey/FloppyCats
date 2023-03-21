@@ -10,6 +10,22 @@
 
 #include "features_client.hpp"
 
+Network::Network() {}
+
+bool Network::initialize() {
+	if (socket_.bind(Socket::AnyPort) != Socket::Done) {
+		return false;
+	}
+	if (!resolvePoint()) {
+		return false;
+	}
+	if (!setHttpClientHost(http_)) {
+		return false;
+	}
+
+	return true;
+}
+
 bool Network::resolvePoint() {
 	bool result = false;
 
@@ -62,29 +78,10 @@ bool Network::resolvePoint() {
 	return result;
 }
 
-Network::Network() {}
-
-bool Network::initialize() {
-	if (socket_.bind(Socket::AnyPort) != Socket::Done) {
-		return false;
-	}
-	if (!resolvePoint()) {
-		return false;
-	}
-	if (!setHttpClientHost(http_)) {
-		return false;
-	}
-
-	return true;
-}
-
-
 bool Network::connect() {
 	Http::Request request = createHttpRequest(Http::Request::Post, API_CONNECTION_CONNECT);
-
 	std::string_view jsonTemplate = R"({{ "ip": "{}", "port": {} }})";
 	std::string body = std::vformat(jsonTemplate, std::make_format_args(ip_, port_));
-
 	std::string resp_body = "";
 
 	if (resolveHttpResponse(http_, request, body, resp_body)) {
@@ -92,9 +89,8 @@ bool Network::connect() {
 		Json::Reader reader;
 
 		if (reader.parse(resp_body, root)) {
-			name_ = root.get("name", "").asString();
+			name = root.get("name", "").asString();
 			token_ = root.get("token", "").asString();
-
 			return true;
 		}
 	}
@@ -103,22 +99,88 @@ bool Network::connect() {
 }
 
 bool Network::refresh() {
-	return false;
+	Http::Request request = createHttpRequest(Http::Request::Post, API_CONNECTION_REFRESH);
+	
+	std::string_view jsonTemplate = R"({{ "ip": "{}", "port": {}, "token": "{}" }})";
+	std::string body = std::vformat(jsonTemplate, std::make_format_args(ip_, port_, token_));
+
+	std::string resp_body = "";
+
+	return resolveHttpResponse(http_, request, body, resp_body);
 }
 
 bool Network::all(std::vector<std::string>& players) {
+	Http::Request request = createHttpRequest(Http::Request::Get, API_PLAYERS_ALL);
+	std::string resp_body = "";
+
+	if (resolveHttpResponse(http_, request, "", resp_body)) {
+		Json::Value root;
+		Json::Reader reader;
+
+		if (reader.parse(resp_body, root)) {
+			unsigned size = root.size();
+			for (unsigned i = 0; i < size; i++) {
+				players.push_back(root[i].asString());
+			}
+			return true;
+		}
+	}
+
 	return false;
 }
+
 bool Network::search(const std::string query, std::string& name) {
+	Http::Request request = createHttpRequest(Http::Request::Post, API_PLAYERS_SEARCH);
+	std::string_view jsonTemplate = R"({{ "query": "{}" }})";
+	std::string body = std::vformat(jsonTemplate, std::make_format_args(query));
+	std::string resp_body = "";
+
+	if (resolveHttpResponse(http_, request, body, resp_body)) {
+		name = resp_body;
+		return true;
+	}
+
 	return false;
 }
+
 bool Network::point(const std::string name, std::string& ip, uint16_t& port) {
+	Http::Request request = createHttpRequest(Http::Request::Post, API_PLAYERS_POINT);
+	std::string_view jsonTemplate = R"({{ "name": "{}" }})";
+	std::string body = std::vformat(jsonTemplate, std::make_format_args(name));
+	std::string resp_body = "";
+
+	if (resolveHttpResponse(http_, request, body, resp_body)) {
+		Json::Value root;
+		Json::Reader reader;
+
+		if (reader.parse(resp_body, root)) {
+			ip = root.get("ip", "").asString();
+			port = root.get("port", "").asUInt();
+			return true;
+		}
+	}
+
 	return false;
 }
 
 bool Network::setPlay(const bool value) {
-	return false;
+	Http::Request request = createHttpRequest(Http::Request::Put, API_PLAYER_PLAY);
+
+	std::string_view jsonTemplate = R"({{ "isPlay": {}, "token": "{}" }})";
+	std::string body = std::vformat(jsonTemplate, std::make_format_args(value, token_));
+
+	std::string resp_body = "";
+
+	return resolveHttpResponse(http_, request, body, resp_body);
 }
+
 bool Network::setPublic(const bool value) {
-	return false;
+	Http::Request request = createHttpRequest(Http::Request::Put, API_PLAYER_PUBLIC);
+
+	std::string_view jsonTemplate = R"({{ "isPublic": {}, "token": "{}" }})";
+	std::string body = std::vformat(jsonTemplate, std::make_format_args(value, token_));
+
+	std::string resp_body = "";
+
+	return resolveHttpResponse(http_, request, body, resp_body);
 }

@@ -17,7 +17,7 @@ router.post('/connect', (ctx, next) => {
         ctx.response.body = key
     } else {
         ctx.response.status = 400
-        ctx.body = `Can't connect player`
+        ctx.response.body = `Can't connect player`
     }
 
     next()
@@ -35,7 +35,7 @@ router.post('/refresh', (ctx, next) => {
         ctx.response.status = 200
     } else {
         ctx.response.status = 400
-        ctx.body = `Can't find player`
+        ctx.response.body = `Can't find player`
     }
 
     next()

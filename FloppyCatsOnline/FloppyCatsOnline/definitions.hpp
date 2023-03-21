@@ -7,7 +7,7 @@
 #define SINGLEPLAYER 1
 #define MULTIPLAYER 2
 #define GAME_SETTINGS 3
-#define MODE MENU
+#define MODE MULTIPLAYER
 
 
 //Media props
