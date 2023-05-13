@@ -188,6 +188,7 @@ xcopy /y /d "$(SolutionDir)\Data\stuns.ini" "$(OutDir)\data"</Command>
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="GameSettings.cpp" />
     <ClCompile Include="http_client.cpp" />
+    <ClCompile Include="Lobby.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -212,6 +213,7 @@ xcopy /y /d "$(SolutionDir)\Data\stuns.ini" "$(OutDir)\data"</Command>
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="Gameplay.hpp" />
     <ClInclude Include="GameSettings.hpp" />
+    <ClInclude Include="Lobby.hpp" />
     <ClInclude Include="Logo.hpp" />
     <ClInclude Include="Menu.hpp" />
     <ClInclude Include="MenuButton.hpp" />

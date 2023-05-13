@@ -87,6 +87,9 @@
     <ClCompile Include="http_client.cpp">
       <Filter>Gameplay\Multiplayer\Network</Filter>
     </ClCompile>
+    <ClCompile Include="Lobby.cpp">
+      <Filter>Gameplay\Multiplayer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="path.hpp">
@@ -150,6 +153,9 @@
       <Filter>Gameplay\Multiplayer\Network</Filter>
     </ClInclude>
     <ClInclude Include="Multiplayer.hpp">
+      <Filter>Gameplay\Multiplayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Lobby.hpp">
       <Filter>Gameplay\Multiplayer</Filter>
     </ClInclude>
   </ItemGroup>
